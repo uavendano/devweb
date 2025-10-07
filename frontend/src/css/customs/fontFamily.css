@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "HelveticaBold";
+    src: url('../../fonts/Helvetica-Bold.ttf');
+    font-display: swap; 
+}
+@font-face {
+    font-family: "HelveticaNormal";
+    src: url('../../fonts/Helvetica.ttf');
+    font-display: swap; 
+}
+.ff-normal{
+    font-family: "HelveticaNormal" !important;
+}
+.ff-bold{
+    font-family: "HelveticaBold" !important;
+}

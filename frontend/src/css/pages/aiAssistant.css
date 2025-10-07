@@ -1,0 +1,101 @@
+#aiAssistant-body{
+    background: #000000;
+}
+.float-1{
+    top: -8%;
+    right: -8%;
+    animation: float 2.5s ease-in-out infinite; /* animación infinita */
+    position: absolute;
+}
+.float-2{
+    bottom: -10%;
+    right: -15%;
+    animation: float 3s ease-in-out infinite; /* diferente tiempo para que no se sincronicen */
+    position: absolute;
+}
+.float-3{
+    animation: float 4s ease-in-out infinite; /* diferente tiempo para que no se sincronicen */
+}
+.float-4 {
+    top: 10%;
+    left: 5%;
+    animation: float 2.5s ease-in-out infinite;
+    position: absolute;
+}
+.float-5 {
+    bottom: -5%;
+    left: 20%;
+    animation: float 3s ease-in-out infinite; /* animación infinita */
+    position: absolute;
+}
+.float-6{
+    top: 0%;
+    right: 20%;
+    animation: float 3.5s ease-in-out infinite; /* animación infinita */
+    position: absolute;
+}
+.float-7{
+    bottom: 40px;
+    right: 10%;
+    animation: float 2.3s ease-in-out infinite; /* animación infinita */
+    position: absolute;
+}
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); } /* sube */
+    100% { transform: translateY(0); }     /* baja */
+}
+@media (min-width: 992px){
+    #aiAssistant-body .mt-10 h2{
+        font-size: 2.625rem !important;
+    }
+}
+.sky {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    z-index: 1;
+    right: -4%;
+    margin-top: 0%;
+}
+.star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('../../images/pages/aiassistant/star.png');
+    background-size: cover;
+    animation: twinkle 2s infinite alternate ease-in-out;
+}
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(0.9);
+    }
+}
+.gradient-border {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #9322FB, #1EA5E7);
+}
+.gradient-border-back {
+    background-color: black;
+    border-radius: 26px;
+    padding: 10px 10px 20px 20px;
+    color: #fff;
+}
+#aiAssistant-body .container.d-flex.align-items-center.mt-6 .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}
+#aiAssistant-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}

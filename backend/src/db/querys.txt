@@ -1,0 +1,67 @@
+-- Crear Base de datos, usuario y permisos a la bd (SQL)
+    CREATE DATABASE taecwebmxdb DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    CREATE USER 'taecuser'@'localhost' IDENTIFIED BY 'mypassword';
+    GRANT ALL PRIVILEGES ON taecwebmxdb.* TO 'taecuser'@'localhost';
+    FLUSH PRIVILEGES;
+
+-- Tabla roles
+CREATE TABLE `tab_role` (
+    `id` INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(30) NOT NULL,
+    `shortname` VARCHAR(20) NOT NULL,
+    `deleted` TINYINT(1) NOT NULL DEFAULT 0,
+    `timedeleted` DATETIME DEFAULT NULL,
+    `description` VARCHAR(255) DEFAULT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    UNIQUE KEY `shortname_unique` (`shortname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Tabla areas
+CREATE TABLE `tab_area` (
+    `id` INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL,
+    `shortname` VARCHAR(30) NOT NULL,
+    `deleted` TINYINT(1) NOT NULL DEFAULT 0,
+    `timedeleted` DATETIME DEFAULT NULL,
+    `description` VARCHAR(255) DEFAULT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    UNIQUE KEY `shortname_unique` (`shortname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Tabla usuarios
+CREATE TABLE `tab_user` (
+    `id` INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `roleid` INT UNSIGNED NOT NULL,
+    `areaid` INT UNSIGNED NOT NULL,
+    `name` VARCHAR(100) NOT NULL,
+    `lastname` VARCHAR(100) NOT NULL,
+    `username` VARCHAR(30) NOT NULL,
+    `email` VARCHAR(50) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `suspended` TINYINT(1) NOT NULL DEFAULT 0,
+    `timesuspended` DATETIME DEFAULT NULL,
+    `deleted` TINYINT(1) NOT NULL DEFAULT 0,
+    `timedeleted` DATETIME DEFAULT NULL,
+    `description` VARCHAR(255) DEFAULT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL,
+    UNIQUE KEY `username_unique` (`username`),
+    UNIQUE KEY `email_unique` (`email`),
+    FOREIGN KEY (`roleid`) REFERENCES `tab_role`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (`areaid`) REFERENCES `tab_area`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Insertar registros en la tabla tab_role
+INSERT INTO `tab_role` (`id`,`name`,`shortname`,`deleted`,`timedeleted`,`description`,`createdAt`,`updatedAt`) VALUES ('1','Administrador','admin','0','0000-00-00 00:00:00
+','Rol administrador','2025-08-04 12:00:00','2025-08-04 12:00:00');
+INSERT INTO `tab_role` (`id`,`name`,`shortname`,`deleted`,`timedeleted`,`description`,`createdAt`,`updatedAt`) VALUES ('2', 'Empleado','emp','0','0000-00-00 00:00:00
+','Rol empleado','2025-08-04 12:00:00','2025-08-04 12:00:00');
+
+-- Insertar registros en la tabla tab_area
+INSERT INTO `tab_area` (`id`,`name`,`shortname`,`deleted`,`timedeleted`,`description`,`createdAt`,`updatedAt`) VALUES ('1','Área no asignada','noArea','0','0000-00-00 00:00:00
+','Área por default','2025-08-04 12:00:00', '2025-08-04 12:00:00');
+
+-- Renombrar nombre a tabla
+RENAME TABLE `taecwebmxdb`.`clientes` TO `taecwebmxdb`.`tab_clientes`;

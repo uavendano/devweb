@@ -1,0 +1,18 @@
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;    
+    z-index: 999;
+}
+.borde{
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.75);
+}
+.btn-demo {
+    background: #F7D13B;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    width: fit-content;
+    text-align: center;
+}

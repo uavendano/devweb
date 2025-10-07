@@ -1,0 +1,15 @@
+#IT-services-body{
+    background: #000000;
+}
+#IT-services-body .container.mt-6.custom-color{
+    color: #FFFFFF !important;
+}
+#IT-services-body .chapternav-item{
+    line-height: 18px !important;
+}
+#IT-services-body .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}
+#IT-services-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}

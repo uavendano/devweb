@@ -1,0 +1,12 @@
+#subconthov{
+    display: inline-flex;
+    width: auto;
+    text-align: right;
+    float: right;
+    padding-right: 30px;    
+}
+@media (max-width: 767px) {
+    #subconthov a{
+        font-size: 16px !important;
+    }
+}

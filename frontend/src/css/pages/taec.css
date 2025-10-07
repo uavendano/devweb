@@ -1,0 +1,15 @@
+#taec-body{
+    background: #000000;
+}
+#taec-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}
+#taec-body .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}
+#taec-body .ms-3.mt-5.mb-4.fs-title.ff-normal.custom-color-blue{
+    color: #FFFFFF !important;
+}
+#taec-body .ms-3.me-3.fs-5.fs-texto.ff-normal.custom-color{
+    color: #FFFFFF !important;
+}

@@ -1,0 +1,10 @@
+@media (min-width: 992px){
+    .bordes-white{
+        border-left: 1px solid #FFFFFF;
+        border-right: 1px solid #FFFFFF;
+    }
+    .bordes{
+        border-left: 1px solid #4E4E4E;
+        border-right: 1px solid #4E4E4E;
+    }
+}

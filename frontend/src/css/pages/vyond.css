@@ -1,0 +1,27 @@
+#vyond-body .css-sticky{
+    background-color: #FFFFFF !important;
+}
+#vyond-body .ac-ln-title a{
+    color: #4E4E4E !important;
+}
+#vyond-body .navbar-toggler i{
+    color: #4E4E4E !important;
+}
+#vyond-body .nav-item a{
+    color: #4E4E4E !important;
+    font-weight: 500;
+}
+.w-80{
+    width: 80% !important;
+}
+@media (max-width: 992px){
+    .img-w-70p{
+        width: 70px !important;
+        height: auto !important;
+    }
+}
+#vyond-body .table td, #vyond-body .table th{
+    border-width: 3px !important;
+    border-color: #F4F4F4 !important;
+    padding: 0 !important;
+}

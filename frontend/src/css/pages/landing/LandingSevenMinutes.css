@@ -1,0 +1,12 @@
+#cont-form-seven{
+    background: rgb(168,219,217);
+    background: linear-gradient(90deg, rgba(168,219,217,1) 0%, rgba(49,121,194,1) 100%);
+    border-radius: 20px;
+}
+#btn-send-seven{
+    background: #FFFFFF;
+    color: #3179C2;
+    width: 100px;
+    border-color: transparent;
+    border-radius: 5px;
+}

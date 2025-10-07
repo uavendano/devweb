@@ -1,0 +1,30 @@
+.background-footer{
+    background-color: #191919;
+}
+#imagen-facebook,#imagen-linkedin,#imagen-blog,#imagen-youtube {
+    min-height: 32px;
+    min-width: 32px;    
+    margin: 10px;
+}
+#imagen-facebook {    
+    background: url('../../images/footer/facebook.png') no-repeat;
+    background-size: 32px;
+}
+#imagen-linkedin {   
+    background: url('../../images/footer/linkedin.png') no-repeat;
+    background-size: 32px;
+}
+#imagen-blog {    
+    background: url('../../images/footer/blog.png') no-repeat;
+    background-size: 32px;
+}
+#imagen-youtube {    
+    background: url('../../images/footer/youtube.png') no-repeat;
+    background-size: 32px;
+}
+#container-tito{
+    margin: 0;
+    padding: 0;
+    text-align: end;
+    margin-top: -250px;
+}

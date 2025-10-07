@@ -1,0 +1,28 @@
+#totara-body{
+    background: #000000;
+}
+#totara-body .container.mt-6.custom-color{
+    color: #FFFFFF !important;
+}
+#totara-body .custom4 h2{
+    color: #FFFFFF !important;
+    text-align: end;
+}
+#totara-body .custom4 p{
+    color: #FFFFFF !important;
+    text-align-last: end;
+    text-align: justify;
+}
+#totara-body .custom4 div > a{
+    float: right !important;
+    margin-right: 0 !important;
+}
+#totara-body .custom5 h2, #totara-body .custom5 p{
+    color: #FFFFFF !important;
+}
+#totara-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color: #FFFFFF !important;
+}
+#totara-body .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}

@@ -1,0 +1,27 @@
+#saras-body .css-sticky{
+    background-color: #FFFFFF !important;
+}
+#saras-body .ac-ln-title a{
+    color: #4E4E4E !important;
+}
+#saras-body .navbar-toggler i{
+    color: #4E4E4E !important;
+}
+#saras-body .nav-item a{
+    color: #4E4E4E !important;
+    font-weight: 500;
+}
+#saras-body .col-md-6.order-2.order-md-1{
+    margin: auto !important;
+}
+#saras-body #custom4 .col-md-6{
+    margin: auto !important;
+}
+#saras-body #custom4 .ff-bold.fs-subtitle.custom-color{
+    text-align: right;
+    margin-top: 5%;
+}
+#saras-body #custom4 ul{
+    direction: rtl;               
+    text-align: right;
+}

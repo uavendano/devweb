@@ -1,0 +1,6 @@
+.nav-link.active-link {
+    border-bottom: 3px solid #0f6cbf;
+    padding-bottom: 3px;
+    color: #0f6cbf !important;
+    font-weight: 500;
+}

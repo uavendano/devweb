@@ -1,0 +1,27 @@
+#one-neo-body .css-sticky{
+    background-color: #FFFFFF !important;
+}
+#one-neo-body .ac-ln-title a{
+    color: #4E4E4E !important;
+}
+#one-neo-body .navbar-toggler i{
+    color: #4E4E4E !important;
+}
+#one-neo-body .nav-item a{
+    color: #4E4E4E !important;
+    font-weight: 500;
+}
+#block-orange,#block-black,#block-blue{
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.75);
+}
+#block-orange{
+    background: #FF8D2E;
+}
+#block-black{
+    background: #231F20;
+}
+#block-blue{
+    background: #4BAFD5;
+}

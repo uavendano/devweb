@@ -1,0 +1,11 @@
+/*Banner*/
+#banner-fondo{
+    background-image: url(../../images/pages/cursoscapacitacion/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (min-width: 992px){
+    .w-35{
+        width: 35% !important;
+    }
+}

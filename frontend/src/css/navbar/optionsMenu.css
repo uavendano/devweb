@@ -1,0 +1,29 @@
+.css-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;    
+    z-index: 999;
+    background-color: #000000;
+}
+#ac-localnav {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    z-index: 997;
+    border-bottom: 1px solid #3179C2;
+    max-width: 980px;
+    margin: auto;
+}
+.ac-ln-title a:hover{
+    color: #3179C2 !important;
+}
+/*responsive*/
+@media (max-width: 992px){ 
+    #ac-localnav {
+        border-bottom: none;             
+    }
+    .css-sticky{
+        z-index: 0;
+    }
+}

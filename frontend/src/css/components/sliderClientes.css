@@ -1,0 +1,30 @@
+.carousel-indicators { 
+    bottom: -50px !important;    
+}
+.carousel-indicators [data-bs-target]{
+    box-sizing:inherit !important;
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background: #4D4D4D !important;
+}
+.radio{
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50px;
+    border-color: #FFFFFF;
+    background: #DDDDDD !important;
+    margin: 0px 10px 0px 10px;
+}
+@media (min-width: 992px){
+    .clientes-border{
+        border-right: 2px solid #E3E3E3 !important;
+        border-bottom: 2px solid #E3E3E3 !important;
+    }
+    .clientes-border-right{
+        border-right: 2px solid #E3E3E3 !important;
+    }
+    .clientes-border-bottom{
+        border-bottom: 2px solid #E3E3E3 !important;
+    }
+}

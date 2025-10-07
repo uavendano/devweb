@@ -1,0 +1,30 @@
+@media (max-width: 1200px) {
+    .img-w-xl-35 {
+        max-width: 35% !important;
+        height: auto !important;
+    }
+}
+@media (max-width: 992px){
+    .img-w-65 {
+        max-width: 65% !important;
+        height: auto !important;
+    }
+    .img-w-75 {
+        max-width: 75% !important;
+        height: auto !important;
+    }
+    .img-w-50 {
+        max-width: 50% !important;
+        height: auto !important;
+    }
+    .img-w-40 {
+        max-width: 40% !important;
+        height: auto !important;
+    }
+}
+@media (max-width: 767px){
+    .img-w-md-40 {
+        max-width: 40% !important;
+        height: auto !important;
+    }
+}

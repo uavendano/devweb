@@ -1,0 +1,19 @@
+#lys-body .css-sticky{
+    background-color: #FFFFFF !important;
+}
+#lys-body .ac-ln-title a{
+    color: #4E4E4E !important;
+}
+#lys-body .navbar-toggler i{
+    color: #4E4E4E !important;
+}
+#lys-body .nav-item a{
+    color: #4E4E4E !important;
+    font-weight: 500;
+}
+.btn-large-blue{
+    background: #4285F4;
+    width: 250px;
+    margin: auto;
+    display: block;
+}

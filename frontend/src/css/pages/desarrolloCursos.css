@@ -1,0 +1,12 @@
+#dcursos-body{
+    background: #000000;
+}
+#dcursos-body .container.mt-6.custom-color{
+    color: #FFFFFF !important;
+}
+#dcursos-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}
+#dcursos-body .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}

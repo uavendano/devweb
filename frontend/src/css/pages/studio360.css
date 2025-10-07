@@ -1,0 +1,24 @@
+#studio360-body .css-sticky{
+    background-color: #FFFFFF !important;
+}
+#studio360-body .ac-ln-title a{
+    color: #4E4E4E !important;
+}
+#studio360-body .navbar-toggler i{
+    color: #4E4E4E !important;
+}
+#studio360-body .nav-item a{
+    color: #4E4E4E !important;
+    font-weight: 500;
+}
+.bg-div-img{
+    background: #DDDDDD;
+    margin-top: 20% !important;
+    padding: 12% !important;
+}
+.bg-img{
+    margin-top: -39% !important;
+}
+.bg-img img{
+    width: 65% !important;
+}

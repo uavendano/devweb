@@ -1,0 +1,44 @@
+#art360-body{
+    background: #000000;
+}
+#contendor-item-ART360 .chapternav-item {
+    line-height: 18px !important;
+}
+#art360-body .chapternav-link{
+    color: #FFFFFF !important;
+}
+/*
+#art360-body .container.mt-6.custom-color{
+    color: #FFFFFF !important;
+}
+*/
+.bg-grey-black{
+    background-color: #191919;
+}
+.vr-white {
+    border: none;
+    border-left: 4px solid #FFFFFF;
+    height: 20px;
+    width: 1px;
+    margin: auto;
+    opacity: 1;
+}
+.border-list {
+    border: 4px solid #FFFFFF;
+    border-radius: 45px;
+    width: max-content;
+}
+.border-bottom-2px {
+    border-bottom: 2px solid;
+}
+@media (max-width: 992px){
+    .w-md-auto{
+        width: auto !important;
+    }
+}
+#art360-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}
+#art360-body .container.d-flex.align-items-center.mt-6 .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}

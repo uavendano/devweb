@@ -1,0 +1,14 @@
+.boton-volver-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;    
+    color: #3179C2;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    display: none;  
+}  
+.boton-volver-arriba.visible {
+    display: block;
+}

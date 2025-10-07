@@ -1,0 +1,7 @@
+# Ignorar node_modules en backend
+backend/node_modules/
+backend/.env
+backend/src/logs/
+
+# Ignorar node_modules en frontend
+frontend/node_modules/

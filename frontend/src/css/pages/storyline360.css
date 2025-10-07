@@ -1,0 +1,9 @@
+#storyline360-body{
+    background: #000000;
+}
+#storyline360-body .flex-grow-1{
+    border-top: 2px solid #FFFFFF !important;
+}
+#storyline360-body .fs-5.fs-subtitle.ff-bold.custom-color{
+    color:#FFFFFF !important;
+}

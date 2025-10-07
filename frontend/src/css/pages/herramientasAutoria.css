@@ -1,0 +1,9 @@
+.container-fluid.bg-black.mt-5.py-5 h2{
+    color: #FFFFFF !important;
+}
+.container-fluid.bg-black.mt-5.py-5 p{
+    color: #FFFFFF !important;
+}
+#custom1.container-fluid.bg-black.mt-5.py-5 img{
+    width: 60% !important;
+}
