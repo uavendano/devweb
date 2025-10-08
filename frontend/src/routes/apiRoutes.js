@@ -25,6 +25,7 @@ const API_ROUTES = {
     USERS_WITH_AREA:`${API_BASE}/api/users-with-area`,
     UNASSIGN_AREA_TO_USERS:`${API_BASE}/api/unassign-area-to-users`,
     MAIL_CONTACT: `${API_BASE}/api/contact`,
+    COURSE_SCHEDULE: `${API_BASE}/api/course-schedule`,
 };
 
 export default API_ROUTES;
