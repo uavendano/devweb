@@ -1,10 +1,10 @@
-import sequelize from "../config/databaseTienda.js";
+import { sequelize2 } from "../config/databaseTienda.js";
 
 // Obtener fechas por ID
 export const getDatesById = async (req, res) => {
   try {
     const { id } = req.params;
-    const [resultados] = await sequelize.query(
+    const [resultados] = await sequelize2.query(
       "SELECT * FROM v_cursos WHERE id = ?",
       { replacements: [id] }
     );
