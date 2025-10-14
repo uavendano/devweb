@@ -47,7 +47,7 @@ export default function Dashboard() {
                                         <>
                                             <li className="nav-item">
                                                 <Link  className={`nav-link d-flex align-items-center gap-2 ${location.pathname === ROUTES.CUSTOMERS ? "active" : ""}`}
-                                                    to={ROUTES.CUSTOMERS}>
+                                                    to={ROUTES.LIST_CUSTOMERS}>
                                                     <i className="bi bi-person-rolodex"></i> Clientes
                                                 </Link >
                                             </li>
