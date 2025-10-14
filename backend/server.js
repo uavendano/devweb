@@ -43,8 +43,10 @@ connectDB();        // BD pag web
 connectDB_STORE();  // BD tienda
 
 // Ruta para mostrar el estado de la conexión a la base de datos
-app.get('/db-status', (req, res) => { res.send(dbStatus); });
-//app.get('/db-status-store', (req, res) => { res.send(dbStatus_STORE); });
+if (process.env.NODE_ENV === 'development') {
+    app.get('/db-status', (req, res) => { res.send(dbStatus); });
+    app.get('/db-status-store', (req, res) => { res.send(dbStatus_STORE); });
+}
 
 // Ruta raiz
 app.use('/api', routes);
