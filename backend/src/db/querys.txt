@@ -64,4 +64,4 @@ INSERT INTO `tab_area` (`id`,`name`,`shortname`,`deleted`,`timedeleted`,`descrip
 ','Área por default','2025-08-04 12:00:00', '2025-08-04 12:00:00');
 
 -- Renombrar nombre a tabla
-RENAME TABLE `taecwebmxdb`.`clientes` TO `taecwebmxdb`.`tab_clientes`;
+RENAME TABLE `taecwebmxdb`.`clientes` TO `taecwebmxdb`.`tab_customers`;

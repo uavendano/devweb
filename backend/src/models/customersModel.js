@@ -42,9 +42,14 @@ const customersModel = sequelize.define('Customer', {
         allowNull: true,
         unique: true,
     },
+    createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+    },
 }, {
-    tableName: 'tab_clientes',  // Especifica el nombre exacto de la tabla 
-    timestamps: true,       // Maneja automáticamente createdAt y updatedAt
+    tableName: 'tab_customers',     // Especifica el nombre exacto de la tabla 
+    timestamps: false,              // si la tabla no tiene createdAt/updatedAt
 });    
 
 export default customersModel;

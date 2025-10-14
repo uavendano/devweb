@@ -28,7 +28,7 @@ router.post('/reset-password', resetPassword);
 
 // *** Rutas protegidas *** //
 // Clientes
-router.use('/customers', isAuthenticated); // Protege todo lo que empiece con /user
+router.use('/customers', isAuthenticated); // Protege todo lo que empiece con /customers
 router.get('/customers', getAllCustomer);
 // Usuarios
 router.use('/user', isAuthenticated); // Protege todo lo que empiece con /user
