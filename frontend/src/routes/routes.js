@@ -139,7 +139,7 @@ const routes = {
     // Paginas Administrador
     DASHBOARD:'/dashboard',
     WELCOME:'/dashboard/welcome',
-    CUSTOMERS: "/dashboard/customers",
+    LIST_CUSTOMERS: "/dashboard/list-customers",
     CREATE_USERS: "/dashboard/create-user",
     LIST_USERS: "/dashboard/list-users",
     EDIT_USER:'/dashboard/edit-user',

@@ -9,7 +9,7 @@ import ForgotPassword from './pages/auth/forgotPassword.js';
 import ResetPassword from './pages/auth/resetPassword.js';
 // Paginas protegidas 
 import Dashboard from './pages/admin/dashboard.js';
-import Customers from './pages/admin/customers/customers.js';
+import ListCustomers from './pages/admin/customers/listCustomers.js';
 import CreateUser from './pages/admin/user/createUser.js';
 import ListUser from './pages/admin/user/listUser.js';
 import EditUser from './pages/admin/user/editUser.js';
@@ -100,7 +100,7 @@ function App() {
                 {/* Dashboard base: solo requiere estar autenticado */}               
                 <Route path={ROUTES.DASHBOARD} element={ <ProtectedRoute> <Dashboard /> </ProtectedRoute> }>
                     {/* Rutas internas protegidas solo para admins */}
-                    <Route path={ROUTES.CUSTOMERS} element={<ProtectedRoute requiredRole="1"> <Customers /> </ProtectedRoute> } />         
+                    <Route path={ROUTES.LIST_CUSTOMERS} element={<ProtectedRoute requiredRole="1"> <ListCustomers /> </ProtectedRoute> } />         
                     <Route path={ROUTES.CREATE_USERS} element={<ProtectedRoute requiredRole="1"> <CreateUser /> </ProtectedRoute> } />   
                     <Route path={ROUTES.LIST_USERS} element={<ProtectedRoute requiredRole="1"> <ListUser /> </ProtectedRoute>} />   
                     <Route path={`${ROUTES.EDIT_USER}/:id`} element={<ProtectedRoute requiredRole="1"> <EditUser /> </ProtectedRoute> } /> 
