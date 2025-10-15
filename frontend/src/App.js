@@ -153,7 +153,7 @@ function App() {
                 <Route path={ROUTES.TERMINOS_CONDICIONES} element={<TerminosCondiciones />} />
                 <Route path={ROUTES.PRIVACIDAD} element={<Privacidad />} />
                 <Route path={ROUTES.POLITICAS} element={<Politicas />} />
-                <Route path={ROUTES.CALENDARIO} element={<Calendario />} />
+                <Route path={ROUTES.CALENDARIO} element={<CalendarioCursos />} />
 
                 {/* Landings pages */}
                 <Route path={ROUTES.LAND_SEVEN_MINUTES} element={<LandingSevenMinutes />} />
