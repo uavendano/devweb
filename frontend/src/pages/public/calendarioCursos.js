@@ -2,25 +2,38 @@ import { useState, useEffect } from 'react';
 import OptionsMenu from '../../components/navbar/optionsMenu.js';
 import ROUTES from '../../routes/routes.js';
 import API_ROUTES from '../../routes/apiRoutes.js';
+import { Link } from 'react-router-dom';
 import '../../css/pages/calendario.css';
 import axios from "axios";
+import { format, parseISO } from 'date-fns';
+import { es } from 'date-fns/locale';
 
-export default function CalendarioCursos() {
-    const [fechas, setFechas] = useState([]);
+export default function Calendario() {
+    const [cursos, setCursos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Cargar imagenes de calendario
     const imgCalendario = require.context('../../images/pages/calendario', true);
 
-    // Obtener la lista de fechas de cursos
-    const fetchFechas = async () => {
+    // Mapeo de logos según idcurso
+    const logos = {
+        111: "curso-ai.png",
+        7: "curso-articulate-rise.png",
+        2: "curso-articulate-completo.png",
+        3: "curso-articulate-basico.png",
+        4: "curso-articulate-avanzado.png",
+        5: "curso-storyline-experto.png",
+        6: "curso-elearning.png"
+    };
+
+    // Obtener la lista de cursos desde el backend
+    const fetchCursos = async () => {
         try {
-            const response = await axios.get(API_ROUTES.COURSE_SCHEDULE);
-            setFechas(response.data.cursos); // acceder a la propiedad cursos
+            const response = await axios.get(API_ROUTES.COURSES_DATES);
+            setCursos(response.data.cursos);
         } catch (err) {
-            console.error('Error al obtener la lista de fechas:', err);
-            setError(err.response?.data?.error || 'Error al obtener la lista de fechas.');
+            console.error('Error al obtener la lista de cursos:', err);
+            setError(err.response?.data?.error || 'Error al obtener la lista de cursos.');
         } finally {
             setLoading(false);
         }
@@ -28,55 +41,70 @@ export default function CalendarioCursos() {
 
     useEffect(() => {
         document.body.id = 'calendario-body';
-        fetchFechas(); // Llamada al endpoint al montar el componente
+        fetchCursos();
 
         return () => {
-            document.body.id = 'body'; // revertir estilo al desmontar
+            document.body.id = 'body';
         };
     }, []);
 
-    // Renderizado de fechas y cursos
-    const renderFechas = () => {
-        if (loading) return <p>Cargando...</p>;
-        if (error) return <p className="text-danger">{error}</p>;
-        if (!fechas || fechas.length === 0) {
+    // Agrupar cursos por producto
+    const groupByProducto = (cursos) => {
+        const grouped = {};
+        cursos.forEach(curso => {
+            if (!grouped[curso.producto]) grouped[curso.producto] = [];
+            grouped[curso.producto].push(curso);
+        });
+        return grouped;
+    };
+
+    // Renderizado
+    const renderCursos = () => {
+        if (loading) return <div className="spinner-border text-primary" role="status"><span className="visually-hidden">Loading...</span></div>;
+        if (error) return <div className="container alert alert-danger" role="alert">{error}</div>;
+        if (!cursos || cursos.length === 0) {
             return (
-                <p>
-                    <b>Por el momento no contamos con fechas disponibles.</b><br />
-                    Favor de ponerse en contacto con un vendedor{" "}
-                    <a href="https://taec.com.mx/contacto.php" target="_blank" rel="noopener noreferrer">AQUI</a>.
+                <p className="fs-5 fs-texto ff-bold">
+                    Por el momento no contamos con fechas disponibles, favor de ponerse en contacto con un vendedor
+                    <Link to={ROUTES.CONTACTO} target="_blank" rel="noopener noreferrer">AQUI</Link>.
                 </p>
             );
         }
 
-        let ultimoProducto = "";
+        const groupedCursos = groupByProducto(cursos);
 
-        return fechas.map((f, i) => (
-            <div key={i} className="mb-4">
-                {ultimoProducto !== f.producto && (
-                    <>
-                        <span className="subtitle">{f.producto}</span>
-                        {f.logo && (
-                            <div className="my-2">
+        return Object.keys(groupedCursos).map((producto, i) => {
+            const cursoGroup = groupedCursos[producto];
+            // Tomamos el logo del primer registro de ese producto
+            const logoFile = logos[cursoGroup[0].idcurso];
+            const logoSrc = logoFile ? imgCalendario(`./${logoFile}`) : null;
+
+            return (
+                <div key={i} className="container col-sm-12 col-md-12 col-xl-8 mb-5 text-start">
+                    <div className="mb-3">
+                        <div className="text-center">
+                            {logoSrc && (
                                 <img
-                                    src={imgCalendario(`./${f.logo}`)}
-                                    alt={f.producto}
-                                    className="img-fluid img-logo"
-                                    width={150}
+                                    src={logoSrc}
+                                    alt={producto}
+                                    className="img-fluid mb-3"
+                                    width={200}
                                 />
+                            )}
+                        </div>
+                        <h3 className="fs-subtitle ff-bold custom-color-blue">{producto}</h3>
+                        {cursoGroup.map((curso, j) => (
+                            <div key={j} className="mb-3">
+                                <p className="fs-5 m-0 fs-texto ff-normal">No. de sesiones: {curso.sesion}</p>
+                                <p className="fs-5 m-0 fs-texto ff-normal">Horario: {curso.horaini} a {curso.horafin} (UTC-6 CDMX)</p>
+                                <p className="fs-5 m-0 fs-texto ff-normal">Del: {format(parseISO(curso.f_inicio), "dd MMMM yyyy", { locale: es })} al {format(parseISO(curso.f_fin), "dd MMMM yyyy", { locale: es })}</p>                                        
+                                <p className="fs-5 m-0 fs-texto ff-bold">Fecha de sesiones: {curso.detalle}</p>
                             </div>
-                        )}
-                    </>
-                )}
-                <span>No. Sesiones: {f.sesion} — Horario: {f.horaini} a {f.horafin} (UTC-6 CDMX)</span>
-                <br />
-                <span>Del {f.f_inicio} al {f.f_fin}</span>
-                <br />
-                <span className="txt-gral-bold">Fecha de sesiones: {f.detalle}</span>
-                <hr style={{ color: "#4E4E4E" }} />
-                {ultimoProducto = f.producto}
-            </div>
-        ));
+                        ))}
+                    </div>
+                </div>
+            );
+        });
     };
 
     return (
@@ -91,14 +119,8 @@ export default function CalendarioCursos() {
             <div className="mt-5">
                 <div className="container custom-color">
                     <div className="col-md-12 m-auto text-center">
-                        <h1 className="fs-title ff-bold">Calendario de cursos</h1>
-                        <img
-                            src={imgCalendario(`./curso-ai.png`)}
-                            className="img-fluid img-w-50 mt-5 mb-4"
-                            width={200}
-                            alt="Ottolearn"
-                        />
-                        {renderFechas()}
+                        <h1 className="fs-title ff-bold mb-5">Calendario de cursos</h1>
+                        {renderCursos()}
                     </div>
                 </div>
             </div>
