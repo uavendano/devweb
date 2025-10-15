@@ -61,7 +61,7 @@ import AiAssistant from './pages/public/aiAssistant.js';
 import TerminosCondiciones from './pages/public/terminosCondiciones.js';
 import Privacidad from './pages/public/privacidad.js';
 import Politicas from './pages/public/politicas.js';
-import Calendario from './pages/public/calendario.js';
+import CalendarioCursos from './pages/public/calendarioCursos.js';
 // Landings
 import LandingSevenMinutes from './pages/public/landing/landingSevenMinutes.js';
 // Utils

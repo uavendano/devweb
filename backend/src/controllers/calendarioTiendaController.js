@@ -1,21 +1,17 @@
 import { sequelize2 } from "../config/databaseTienda.js";
+import { logInfo, logError, logWarn } from '../utils/logger.js';
 
-// Obtener fechas por ID
-export const getDatesById = async (req, res) => {
+// Obtener fechas de cursos
+export const getDates = async (req, res) => {
     try {
-        const { ids } = req.query; // Ej: ?ids=7,8,9
-        if (!ids) return res.status(400).json({ error: "No se proporcionaron IDs" });
-
-        const idArray = ids.split(','); // Convertimos a array ["7","8","9"]
-
-        const [resultados] = await sequelize2.query(
-        `SELECT * FROM v_cursos WHERE id IN (${idArray.map(() => '?').join(',')})`,
-        { replacements: idArray }
-        );
-
-        res.json(resultados);
+        logInfo("Iniciando consulta de cursos en v_cursos");
+        // Query cruda para obtener todos los cursos de la vista
+        const [cursos] = await sequelize2.query("SELECT id,producto,idcurso,f_inicio,f_fin,horaini,horafin,sesion,detalle FROM v_cursos");
+        logInfo(`Consulta exitosa. Se encontraron ${cursos.length} cursos`);
+        res.status(200).json({ message: `Se han obtenido ${cursos.length} cursos correctamente.`, cursos: cursos });
     } catch (error) {
-        console.error("Error al obtener fechas por IDs:", error);
-        res.status(500).json({ error: "Error interno del servidor" });
+        console.error("Error al obtener las fechas de cursos:", error);
+        logError("Error al obtener las fechas de cursos:", error);
+        res.status(500).json({ message: 'Error al obtener las fechas de cursos.', error: error.message });
     }
 };

@@ -103,7 +103,7 @@ const routes = {
     STORE_CURSOS_VYOND:'https://tienda.taec.com.mx/24',
     STORE_CURSOS_TOTARA:'https://tienda.taec.com.mx/22',
     // Calendarios
-    CALENDARIO:'/calendario',
+    CALENDARIO_CURSOS:'/calendario',
     CALENDARIO_ART_AI:'/calendario#Articulate-Assistant',
     CALENDARIO_DIS_ELE:'/calendario#Diseño-elearning',
     CALENDARIO_ART_ACC:'/calendario#cursos-accesibles-Articulate-360',

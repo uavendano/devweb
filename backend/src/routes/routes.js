@@ -9,7 +9,7 @@ import { getAdmins, getEmployee, addAdmin, removeAdmin } from '../controllers/as
 import { createArea, getAllArea, getAreaById, updateArea, deleteArea } from '../controllers/areaController.js';
 import { sendContactEmail } from '../controllers/contactController.js';
 import { getAllAreaActive, getUserWithoutArea, assignAreaToUsers, getUsersWithArea, unassignAreaFromUsers } from '../controllers/assignAreaController.js';
-import { getDatesById } from '../controllers/calendarioTiendaController.js';
+import { getDates } from '../controllers/calendarioTiendaController.js';
 
 const router = express.Router();
 
@@ -60,6 +60,6 @@ router.post('/unassign-area-to-users', isAuthenticated, unassignAreaFromUsers);
 // Formularios
 router.post('/contact', sendContactEmail);
 // Calendario tienda
-router.get('/course-schedule/:id', getDatesById);
+router.get('/courses-dates', getDates);
 
 export default router;
