@@ -6,7 +6,7 @@ export const getDates = async (req, res) => {
     try {
         logInfo("Iniciando consulta de cursos en v_cursos");
         // Query cruda para obtener todos los cursos de la vista
-        const [cursos] = await sequelize2.query("SELECT id,producto,idcurso,f_inicio,f_fin,horaini,horafin,sesion,detalle FROM v_cursos");
+        const [cursos] = await sequelize2.query("SELECT id,producto,idcurso,f_inicio,f_fin,horaini,horafin,sesion,detalle FROM v_cursos ORDER BY producto ASC, f_inicio ASC");
         logInfo(`Consulta exitosa. Se encontraron ${cursos.length} cursos`);
         res.status(200).json({ message: `Se han obtenido ${cursos.length} cursos correctamente.`, cursos: cursos });
     } catch (error) {
