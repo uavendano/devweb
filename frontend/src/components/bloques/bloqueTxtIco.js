@@ -1,5 +1,6 @@
 import '../../css/components/bloqueTxtIco.css';
 import { Link } from 'react-router-dom';
+import { HashLink as Ancla } from 'react-router-hash-link';
 
 const imgPath = require.context('../../images/componentes/BloqueTxtIco',true);
 
@@ -46,16 +47,16 @@ export default function BloqueTxtIco({ancla,subtitle,info,buttons,img,altText}) 
                                     } else {
                                         // botón normal
                                         return (
-                                            <a
+                                            <Ancla
                                                 key={index}
                                                 className={button.className}
-                                                href={button.path}
+                                                to={button.path}
                                                 target={button.openInNewTab ? "_blank" : "_self"}
                                                 rel={button.openInNewTab ? "noopener noreferrer" : ""}
                                                 style={{ display: "inline-block", marginRight: "10px" }}
                                             >
                                                 {button.text}
-                                            </a>
+                                            </Ancla>
                                         );
                                     }
                                 })
